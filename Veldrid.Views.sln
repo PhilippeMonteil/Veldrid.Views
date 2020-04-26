@@ -14,6 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Doc", "Doc", "{0911AB0D-1F5
 		Doc\DXC.txt = Doc\DXC.txt
 		Doc\Shaders.bat = Doc\Shaders.bat
 		Doc\SPIRV-Cross.txt = Doc\SPIRV-Cross.txt
+		TODO.txt = TODO.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Veldrid.Views.Contracts", "Veldrid.Views.Contracts", "{C80C931D-6971-4123-9EF1-8423CAFA0ADF}"

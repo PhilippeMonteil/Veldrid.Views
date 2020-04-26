@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
@@ -52,7 +53,14 @@ namespace Test.Veldrid.Views.XamarinForms.UWP
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
-                Xamarin.Forms.Forms.Init(e);
+                // IMPORTANT
+                {
+                    var rendererAssemblies = new[]
+                    {
+                        typeof(global::Veldrid.Views.XamarinForms.UWP.VeldridViewRenderer).GetTypeInfo().Assembly,
+                    };
+                    Xamarin.Forms.Forms.Init(e, rendererAssemblies);
+                }
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {

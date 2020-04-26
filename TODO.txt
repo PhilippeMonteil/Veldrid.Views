@@ -1,0 +1,14 @@
+
+.) For Xamarin.Forms.UWP applications
+
+  Add the following code to the App.OnLaunched method:
+
+                // IMPORTANT
+                {
+                    var rendererAssemblies = new[]
+                    {
+                        typeof(global::Veldrid.Views.XamarinForms.UWP.VeldridViewRenderer).GetTypeInfo().Assembly,
+                    };
+                    Xamarin.Forms.Forms.Init(e, rendererAssemblies);
+                }
+

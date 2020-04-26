@@ -15,7 +15,7 @@
             <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
 
-        <Label Grid.Row="0" Text="Welcome to Xamarin.Forms! 3.000" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+        <Label Grid.Row="0" Text="Welcome to Veldrid.Views.Xamarin.Forms! 1.000" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
 
         <vvxfcore:VeldridView x:Name="VeldridView0" Grid.Row="1" BackgroundColor="Red" Margin="64" >
             <vvxfcore:VeldridViewPainter.CommandListFactory>
@@ -23,12 +23,9 @@
             </vvxfcore:VeldridViewPainter.CommandListFactory>
         </vvxfcore:VeldridView>
 
-        <Button x:Name="bnTest" Grid.Row="2" 
-                VerticalOptions="CenterAndExpand"
-                HorizontalOptions="Center" 
-                Clicked="bnTest_Clicked" 
-                Text="Test!!!!!!!!!!!!!!!!!!"
-                Margin="8" />
+        <Button x:Name="bnTest" Text="Test: VeldridView0.Update"
+                Grid.Row="2" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Margin="8" 
+                Clicked="bnTest_Clicked" />
 
     </Grid>
 
