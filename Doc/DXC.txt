@@ -121,8 +121,5 @@ Utility Options:
   -verifyrootsignature <file>
                         Verify shader bytecode with root signature
 
-dxc -T vs_6_0 -spirv -E _VertexShader -Fo CTests_Vertices2DColored.vs.spv C:\Solal.SDK\4.0\DotNET\Solal.40.DirectX11\SODirectX11_WPF\Shaders\CTests_Vertices2DColored.vs 
-dxc -T ps_6_0 -spirv -E _PixelShader -Fo CTests_Vertices2DColored.ps.spv C:\Solal.SDK\4.0\DotNET\Solal.40.DirectX11\SODirectX11_WPF\Shaders\CTests_Vertices2DColored.ps 
-
 
 

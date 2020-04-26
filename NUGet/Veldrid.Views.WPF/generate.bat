@@ -7,6 +7,7 @@ del Veldrid.Views.WPF.1.0.*.nupkg
 
 nuget pack Veldrid.Views.WPF.nuspec
 
+del ..\Veldrid.Views.WPF.1.0.*.nupkg
 copy Veldrid.Views.WPF.1.0.*.nupkg ..
 
 pause

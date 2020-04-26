@@ -7,6 +7,8 @@ del Veldrid.Views.CommandListFactory.1.0.*.nupkg
 
 nuget pack Veldrid.Views.CommandListFactory.nuspec
 
+del ..\Veldrid.Views.CommandListFactory.1.0.*.nupkg
+
 copy Veldrid.Views.CommandListFactory.1.0.*.nupkg ..
 
 pause

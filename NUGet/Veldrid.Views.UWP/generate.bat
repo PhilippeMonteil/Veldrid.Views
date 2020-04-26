@@ -7,6 +7,8 @@ del Veldrid.Views.UWP.1.0.*.nupkg
 
 nuget pack Veldrid.Views.UWP.nuspec
 
+del ..\Veldrid.Views.UWP.1.0.*.nupkg
+
 copy Veldrid.Views.UWP.1.0.*.nupkg ..
 
 pause

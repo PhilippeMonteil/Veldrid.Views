@@ -9,9 +9,18 @@
         xmlns:clf="clr-namespace:Veldrid.Views.CommandListFactory;assembly=Veldrid.Views.CommandListFactory"
         mc:Ignorable="d"
         Title="MainWindow" Background="DarkGray" Width="Auto" Height="Auto" >
-    <Grid>
+    <Grid x:Name="Grid0" Background="LightGray" Margin="8">
 
-        <Image x:Name="Image0" Stretch="Fill" Margin="32" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="200" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="200" />
+        </Grid.RowDefinitions>
+
+        <Image x:Name="Image0" Stretch="None" Grid.Column="0" Grid.Row="0" Margin="4" >
             <Image.Source>
                 <dx:D3D11Image x:Name="d3D11Image" >
                     <vvwpf:D3D11ImagePainter.CommandListFactory>
@@ -20,8 +29,8 @@
                 </dx:D3D11Image>
             </Image.Source>
         </Image>
-        
-        <Button x:Name="bnTest" Width="200" Height="50" Click="BnTest_Click" Margin="8" Content="Test"/>
+
+        <Button x:Name="bnTest" Grid.Column="1" Grid.Row="1" Click="BnTest_Click" Margin="4" Content="Test"/>
 
     </Grid>
 </Window>

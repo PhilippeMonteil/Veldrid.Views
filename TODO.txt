@@ -12,3 +12,5 @@
                     Xamarin.Forms.Forms.Init(e, rendererAssemblies);
                 }
 
+  It is required to obtain the connection between VeldridViews and their renderer under UWP in Release mode.
+

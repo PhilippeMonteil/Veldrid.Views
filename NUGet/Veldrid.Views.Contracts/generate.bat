@@ -7,6 +7,7 @@ del Veldrid.Views.Contracts.1.0.*.nupkg
 
 nuget pack Veldrid.Views.Contracts.nuspec
 
+del ..\Veldrid.Views.Contracts.1.0.*.nupkg
 copy Veldrid.Views.Contracts.1.0.*.nupkg ..
 
 pause
