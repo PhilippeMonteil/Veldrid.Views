@@ -340,3 +340,4 @@ ASALocalRun/
 healthchecksdb
 /NUGet/Veldrid.Views.Contracts/lib/netstandard2.0/Veldrid.Views.Contracts.dll
 /NUGet/Veldrid.Views.CommandListFactory/lib/netstandard2.0
+/NUGet/Veldrid.Views.XamarinForms/lib

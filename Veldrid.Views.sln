@@ -40,6 +40,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Veldrid.Views.XamarinForms.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Veldrid.Views.XamarinForms.UWP", "Veldrid.Views\Veldrid.Views.XamarinForms\Veldrid.Views.XamarinForms.UWP\Veldrid.Views.XamarinForms.UWP.csproj", "{CE47A673-E8B6-454D-9066-41E6ACF4C9B9}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Veldrid.Views.XamarinForms", "Veldrid.Views.XamarinForms", "{28DC3199-6EFF-4417-9A44-A8C2D77B3D9A}"
+	ProjectSection(SolutionItems) = preProject
+		NUGet\Veldrid.Views.XamarinForms\generate.bat = NUGet\Veldrid.Views.XamarinForms\generate.bat
+		NUGet\Veldrid.Views.XamarinForms\Veldrid.Views.XamarinForms.nuspec = NUGet\Veldrid.Views.XamarinForms\Veldrid.Views.XamarinForms.nuspec
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -186,6 +192,7 @@ Global
 		{3C3BA3A9-03A9-45AC-883B-A138B9D0909B} = {8F612B7D-3A49-45B4-A76D-CBB01AC543BB}
 		{548AA04D-0D29-4034-9354-3788FE89B0CF} = {8F612B7D-3A49-45B4-A76D-CBB01AC543BB}
 		{CE47A673-E8B6-454D-9066-41E6ACF4C9B9} = {8F612B7D-3A49-45B4-A76D-CBB01AC543BB}
+		{28DC3199-6EFF-4417-9A44-A8C2D77B3D9A} = {25E34E96-202D-4FC6-B718-F6B766308067}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A4CA2E0F-3CF8-4FF0-88C4-79116CBFB52F}
