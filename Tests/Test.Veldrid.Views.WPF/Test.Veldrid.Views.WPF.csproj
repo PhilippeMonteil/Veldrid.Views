@@ -24,6 +24,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,8 +34,12 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Wpf.Interop.DirectX, Version=0.9.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=AMD64">
+      <HintPath>..\..\packages\Microsoft.Wpf.Interop.DirectX-x64.0.9.0-beta-22856\lib\net45\Microsoft.Wpf.Interop.DirectX.dll</HintPath>
+    </Reference>
     <Reference Include="SharpDX, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
       <HintPath>..\..\packages\SharpDX.4.2.0\lib\net45\SharpDX.dll</HintPath>
     </Reference>
@@ -74,8 +79,11 @@
     <Reference Include="Veldrid.D3D11, Version=4.7.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Veldrid.Platforms.1.0.9\lib\netstandard2.0\Veldrid.D3D11.dll</HintPath>
     </Reference>
+    <Reference Include="Veldrid.Views.CommandListFactory, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Veldrid.Views.CommandListFactory.1.0.3\lib\netstandard2.0\Veldrid.Views.CommandListFactory.dll</HintPath>
+    </Reference>
     <Reference Include="Veldrid.Views.Contracts, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Veldrid.Views.Contracts.1.0.0\lib\netstandard2.0\Veldrid.Views.Contracts.dll</HintPath>
+      <HintPath>..\..\packages\Veldrid.Views.Contracts.1.0.1\lib\netstandard2.0\Veldrid.Views.Contracts.dll</HintPath>
     </Reference>
     <Reference Include="Veldrid.Views.WPF, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Veldrid.Views.WPF.1.0.1\lib\netstandard2.0\Veldrid.Views.WPF.dll</HintPath>

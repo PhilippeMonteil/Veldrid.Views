@@ -24,5 +24,10 @@ namespace Test.Veldrid.Views.WPF
         {
             InitializeComponent();
         }
+
+        private void BnTest_Click(object sender, RoutedEventArgs e)
+        {
+            InteropImage.RequestRender();
+        }
     }
 }

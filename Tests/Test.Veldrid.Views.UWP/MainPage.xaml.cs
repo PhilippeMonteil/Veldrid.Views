@@ -26,5 +26,10 @@ namespace Test.Veldrid.Views.UWP
         {
             this.InitializeComponent();
         }
+
+        private void BnTest_Click(object sender, RoutedEventArgs e)
+        {
+        }
+
     }
 }

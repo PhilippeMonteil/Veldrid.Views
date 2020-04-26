@@ -4,9 +4,23 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Test.Veldrid.Views.WPF"
+        xmlns:dx="clr-namespace:Microsoft.Wpf.Interop.DirectX;assembly=Microsoft.Wpf.Interop.DirectX"
+        xmlns:vvwpf="clr-namespace:Veldrid.Views.WPF;assembly=Veldrid.Views.WPF"
+        xmlns:clf="clr-namespace:Veldrid.Views.CommandListFactory;assembly=Veldrid.Views.CommandListFactory"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Background="DarkGray" Width="Auto" Height="Auto" >
     <Grid>
         
+        <Image Stretch="None" Name="ImageHost" Margin="32">
+            <Image.Source>
+                <dx:D3D11Image x:Name="InteropImage" >
+                    <vvwpf:D3D11ImagePainter.CommandListFactory>
+                        <clf:CommandListFactoryTest />
+                    </vvwpf:D3D11ImagePainter.CommandListFactory>
+                </dx:D3D11Image>
+            </Image.Source>
+        </Image>
+        <Button x:Name="bnTest" Width="200" Height="50" Click="BnTest_Click" Margin="8" Content="Test"/>
+
     </Grid>
 </Window>

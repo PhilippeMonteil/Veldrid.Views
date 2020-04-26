@@ -20,22 +20,22 @@ using System.Diagnostics;
 namespace Veldrid.Views.UWP
 {
 
-    public class SwapChainPanelPainter
+    public class SwapChainPanelPainter : DependencyObject
     {
 
         #region --- CommandListFactory
 
         public static ICommandListFactory GetCommandListFactory(DependencyObject obj)
         {
-            return (ICommandListFactory)obj.GetValue(RendererProperty);
+            return (ICommandListFactory)obj.GetValue(CommandListFactoryProperty);
         }
 
         public static void SetCommandListFactory(DependencyObject obj, ICommandListFactory value)
         {
-            obj.SetValue(RendererProperty, value);
+            obj.SetValue(CommandListFactoryProperty, value);
         }
 
-        public static readonly DependencyProperty RendererProperty = DependencyProperty.RegisterAttached("CommandListFactory",
+        public static readonly DependencyProperty CommandListFactoryProperty = DependencyProperty.RegisterAttached("CommandListFactory",
                                                                             typeof(ICommandListFactory),
                                                                             typeof(SwapChainPanel),
                                                                             new PropertyMetadata(null, PropertyChangedCallback));
