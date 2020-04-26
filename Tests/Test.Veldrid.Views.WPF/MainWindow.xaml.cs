@@ -23,11 +23,25 @@ namespace Test.Veldrid.Views.WPF
         public MainWindow()
         {
             InitializeComponent();
+            this.Loaded += MainWindow_Loaded;
+        }
+
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            InitializeRendering();
+        }
+
+        const int Size = 1024;
+
+        private void InitializeRendering()
+        {
+            d3D11Image.SetPixelSize(Size, Size);
+            d3D11Image.WindowOwner = (new System.Windows.Interop.WindowInteropHelper(this)).Handle;
         }
 
         private void BnTest_Click(object sender, RoutedEventArgs e)
         {
-            InteropImage.RequestRender();
+            d3D11Image.RequestRender();
         }
     }
 }

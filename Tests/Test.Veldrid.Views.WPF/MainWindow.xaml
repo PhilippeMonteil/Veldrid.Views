@@ -10,16 +10,17 @@
         mc:Ignorable="d"
         Title="MainWindow" Background="DarkGray" Width="Auto" Height="Auto" >
     <Grid>
-        
-        <Image Stretch="None" Name="ImageHost" Margin="32">
+
+        <Image x:Name="Image0" Stretch="Fill" Margin="32" >
             <Image.Source>
-                <dx:D3D11Image x:Name="InteropImage" >
+                <dx:D3D11Image x:Name="d3D11Image" >
                     <vvwpf:D3D11ImagePainter.CommandListFactory>
-                        <clf:CommandListFactoryTest />
+                        <clf:CommandListFactoryTest2D />
                     </vvwpf:D3D11ImagePainter.CommandListFactory>
                 </dx:D3D11Image>
             </Image.Source>
         </Image>
+        
         <Button x:Name="bnTest" Width="200" Height="50" Click="BnTest_Click" Margin="8" Content="Test"/>
 
     </Grid>

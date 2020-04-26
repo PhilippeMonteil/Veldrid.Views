@@ -80,6 +80,11 @@ namespace Veldrid.Views.WPF
                 #endregion
             };
 
+            if (d3D11Image.Width > 0 && d3D11Image.Height > 0)
+            {
+                d3D11Image.AddDirtyRect(new Int32Rect(0, 0, (int)d3D11Image.Width, (int)d3D11Image.Height));
+                d3D11Image.RequestRender();
+            }
         }
 
         #region --- class RenderData
