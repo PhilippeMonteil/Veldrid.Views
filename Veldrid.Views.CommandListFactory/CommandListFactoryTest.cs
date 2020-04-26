@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 using Veldrid;
+using Veldrid.Views.Contracts;
 
 namespace Veldrid.Views.CommandListFactory
 {

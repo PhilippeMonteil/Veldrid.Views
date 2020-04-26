@@ -338,3 +338,4 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+/NUGet/Veldrid.Views.Contracts/lib/netstandard2.0/Veldrid.Views.Contracts.dll
