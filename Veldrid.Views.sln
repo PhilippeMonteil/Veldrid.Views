@@ -8,10 +8,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Veldrid.Views.CommandListFactory", "Veldrid.Views.CommandListFactory\Veldrid.Views.CommandListFactory.csproj", "{EB7B0F1F-0979-483D-988B-F7B675D9F2B1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NUGet", "NUGet", "{25E34E96-202D-4FC6-B718-F6B766308067}"
-	ProjectSection(SolutionItems) = preProject
-		NUGet\Veldrid.Platforms.1.0.8.nupkg = NUGet\Veldrid.Platforms.1.0.8.nupkg
-		NUGet\Veldrid.Views.Contracts.1.0.0.nupkg = NUGet\Veldrid.Views.Contracts.1.0.0.nupkg
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Doc", "Doc", "{0911AB0D-1F5A-4E97-AD59-DC97233CB47D}"
 	ProjectSection(SolutionItems) = preProject
@@ -28,6 +24,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Veldrid.Views.Contracts", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Veldrid.Views.CommandListFactory", "Veldrid.Views.CommandListFactory", "{DB1143FD-4FF6-42FA-978B-37F6E3007C0F}"
 	ProjectSection(SolutionItems) = preProject
+		NUGet\Veldrid.Views.CommandListFactory\generate.bat = NUGet\Veldrid.Views.CommandListFactory\generate.bat
 		NUGet\Veldrid.Views.CommandListFactory\Veldrid.Views.CommandListFactory.nuspec = NUGet\Veldrid.Views.CommandListFactory\Veldrid.Views.CommandListFactory.nuspec
 	EndProjectSection
 EndProject
