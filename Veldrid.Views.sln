@@ -65,6 +65,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Veldrid.Views.UWP", "T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Veldrid.Views.WPF", "Tests\Test.Veldrid.Views.WPF\Test.Veldrid.Views.WPF.csproj", "{14EC6167-F5BB-4FDC-A5F7-725A6D5CBF08}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Veldrid.Views.WPF", "Veldrid.Views.WPF", "{52362C75-EB61-41A0-96BD-F0D2FFFEE7BE}"
+	ProjectSection(SolutionItems) = preProject
+		NUGet\Veldrid.Views.WPF\generate.bat = NUGet\Veldrid.Views.WPF\generate.bat
+		NUGet\Veldrid.Views.WPF\Veldrid.Views.WPF.nuspec = NUGet\Veldrid.Views.WPF\Veldrid.Views.WPF.nuspec
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Veldrid.Views.UWP", "Veldrid.Views.UWP", "{7AEBD4C5-EEE7-47C4-BFF0-459D9F86E7D5}"
+	ProjectSection(SolutionItems) = preProject
+		NUGet\Veldrid.Views.UWP\generate.bat = NUGet\Veldrid.Views.UWP\generate.bat
+		NUGet\Veldrid.Views.UWP\Veldrid.Views.UWP.nuspec = NUGet\Veldrid.Views.UWP\Veldrid.Views.UWP.nuspec
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -495,6 +507,8 @@ Global
 		{F8756DD4-BE02-4B64-AB43-F070F9C26EBC} = {BC3A879F-C54D-4AE7-A556-7E17A2943CC1}
 		{FD0BEA60-F4F0-47E7-B0A4-F239951CC71C} = {90AE538E-99F3-4A4D-8AC9-994EA935DE84}
 		{14EC6167-F5BB-4FDC-A5F7-725A6D5CBF08} = {90AE538E-99F3-4A4D-8AC9-994EA935DE84}
+		{52362C75-EB61-41A0-96BD-F0D2FFFEE7BE} = {25E34E96-202D-4FC6-B718-F6B766308067}
+		{7AEBD4C5-EEE7-47C4-BFF0-459D9F86E7D5} = {25E34E96-202D-4FC6-B718-F6B766308067}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A4CA2E0F-3CF8-4FF0-88C4-79116CBFB52F}
