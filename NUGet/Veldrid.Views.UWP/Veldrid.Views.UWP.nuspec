@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>Veldrid.Views.UWP</id>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <authors>Philippe Monteil</authors>
     <owners>Philippe Monteil</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -19,7 +19,7 @@
         <dependency id="SharpDX.D3DCompiler" version="4.2.0" exclude="Build,Analyzers" />
         <dependency id="SharpDX.DXGI" version="4.2.0" exclude="Build,Analyzers" />
         <dependency id="SharpDX.Direct3D11" version="4.2.0" exclude="Build,Analyzers" />
-        <dependency id="Veldrid.Contracts" version="1.0.1" exclude="Build,Analyzers"/>
+        <dependency id="Veldrid.Views.Contracts" version="1.0.0" exclude="Build,Analyzers"/>
         <dependency id="Veldrid.Platforms" version="1.0.9" exclude="Build,Analyzers"/>
       </group>      
     </dependencies>
