@@ -22,6 +22,6 @@ del Veldrid.Views.XamarinForms.1.0.*.nupkg
 
 nuget pack Veldrid.Views.XamarinForms.nuspec
 
-copy Veldrid.Views.XamarinForms.1.0.*.nupkg c:\NUget
+copy Veldrid.Views.XamarinForms.1.0.*.nupkg ..
 
 pause
