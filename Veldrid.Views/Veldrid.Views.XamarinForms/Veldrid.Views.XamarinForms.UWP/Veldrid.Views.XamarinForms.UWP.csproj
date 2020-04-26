@@ -130,6 +130,15 @@
     <PackageReference Include="Veldrid.Platforms">
       <Version>1.0.8</Version>
     </PackageReference>
+    <PackageReference Include="Xamarin.Forms">
+      <Version>4.5.0.657</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Veldrid.Views.XamarinForms.Core\Veldrid.Views.XamarinForms.Core.csproj">
+      <Project>{9769ebb2-0881-412b-a44a-dd5bee21201a}</Project>
+      <Name>Veldrid.Views.XamarinForms.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
