@@ -1,0 +1,12 @@
+
+struct VS_OUT
+{
+	float4 posH    : SV_POSITION;
+	float4 colorC  : COLOR;
+};
+
+float4 _PixelShader(VS_OUT vIn) : SV_Target
+{
+	return vIn.colorC;
+}
+

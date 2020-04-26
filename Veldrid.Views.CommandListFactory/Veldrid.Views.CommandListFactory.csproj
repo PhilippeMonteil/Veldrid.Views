@@ -4,6 +4,40 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Shaders\Test_Colored2DVertices.ps" />
+    <None Remove="Shaders\Test_Colored2DVertices.vs" />
+    <None Remove="Shaders\Test_Colored2DVertices_ps.glsl" />
+    <None Remove="Shaders\Test_Colored2DVertices_ps.msl" />
+    <None Remove="Shaders\Test_Colored2DVertices_ps.spv" />
+    <None Remove="Shaders\Test_Colored2DVertices_ps_es.glsl" />
+    <None Remove="Shaders\Test_Colored2DVertices_vs.glsl" />
+    <None Remove="Shaders\Test_Colored2DVertices_vs.msl" />
+    <None Remove="Shaders\Test_Colored2DVertices_vs.spv" />
+    <None Remove="Shaders\Test_Colored2DVertices_vs_es.glsl" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Shaders\Test_Colored2DVertices.ps" />
+    <EmbeddedResource Include="Shaders\Test_Colored2DVertices.vs" />
+    <EmbeddedResource Include="Shaders\Test_Colored2DVertices_ps.glsl" />
+    <EmbeddedResource Include="Shaders\Test_Colored2DVertices_ps.msl" />
+    <EmbeddedResource Include="Shaders\Test_Colored2DVertices_ps.spv" />
+    <EmbeddedResource Include="Shaders\Test_Colored2DVertices_ps_es.glsl" />
+    <EmbeddedResource Include="Shaders\Test_Colored2DVertices_vs.glsl" />
+    <EmbeddedResource Include="Shaders\Test_Colored2DVertices_vs.msl" />
+    <EmbeddedResource Include="Shaders\Test_Colored2DVertices_vs.spv" />
+    <EmbeddedResource Include="Shaders\Test_Colored2DVertices_vs_es.glsl" />
+  </ItemGroup>
+
   <ItemGroup>
     <PackageReference Include="Veldrid.Platforms" Version="1.0.8" />
     <PackageReference Include="Veldrid.Views.Contracts" Version="1.0.0" />
