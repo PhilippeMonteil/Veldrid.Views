@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>Veldrid.Views.CommandListFactory</id>
-    <version>1.0.002</version>
+    <version>1.0.3</version>
     <authors>Philippe Monteil</authors>
     <owners>Philippe Monteil</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -15,7 +15,7 @@
     <tags>velvrid ui views xamarin.forms ios android uwp wpf</tags>
     <dependencies>
       <group targetFramework=".NETStandard2.0">
-        <dependency id="Veldrid.Platforms" version="1.0.8" exclude="Build,Analyzers"/>
+        <dependency id="Veldrid.Platforms" version="1.0.9" exclude="Build,Analyzers"/>
         <dependency id="Veldrid.Views.Contracts" version="1.0.0" exclude="Build,Analyzers"/>
       </group>
     </dependencies>

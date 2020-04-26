@@ -5,8 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Veldrid.Platforms" Version="1.0.8" />
-    <PackageReference Include="Veldrid.Views.Contracts" Version="1.0.0" />
+    <PackageReference Include="Veldrid.Platforms" Version="1.0.9" />
+    <PackageReference Include="Veldrid.Views.Contracts" Version="1.0.1" />
     <PackageReference Include="Xamarin.Forms" Version="4.5.0.657" />
   </ItemGroup>
 
