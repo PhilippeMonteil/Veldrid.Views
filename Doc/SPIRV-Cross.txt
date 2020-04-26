@@ -1,0 +1,85 @@
+﻿C:\Users\philm>spirv-cross > spirv-cross.txt
+Usage: spirv-cross
+        [--output <output path>]
+        [SPIR-V file]
+        [--es]
+        [--no-es]
+        [--version <GLSL version>]
+        [--dump-resources]
+        [--help]
+        [--revision]
+        [--force-temporary]
+        [--vulkan-semantics] or [-V]
+        [--flatten-ubo]
+        [--fixup-clipspace]
+        [--flip-vert-y]
+        [--iterations iter]
+        [--cpp]
+        [--cpp-interface-name <name>]
+        [--disable-storage-image-qualifier-deduction]
+        [--force-zero-initialized-variables]
+        [--glsl-emit-push-constant-as-ubo]
+        [--glsl-emit-ubo-as-plain-uniforms]
+        [--glsl-remap-ext-framebuffer-fetch input-attachment color-location]
+        [--vulkan-glsl-disable-ext-samplerless-texture-functions]
+        [--msl]
+        [--msl-version <MMmmpp>]
+        [--msl-capture-output]
+        [--msl-swizzle-texture-samples]
+        [--msl-ios]
+        [--msl-pad-fragment-output]
+        [--msl-domain-lower-left]
+        [--msl-argument-buffers]
+        [--msl-texture-buffer-native]
+        [--msl-framebuffer-fetch]
+        [--msl-emulate-cube-array]
+        [--msl-discrete-descriptor-set <index>]
+        [--msl-device-argument-buffer <index>]
+        [--msl-multiview]
+        [--msl-view-index-from-device-index]
+        [--msl-dispatch-base]
+        [--msl-dynamic-buffer <set index> <binding>]
+        [--msl-inline-uniform-block <set index> <binding>]
+        [--msl-decoration-binding]
+        [--msl-force-active-argument-buffer-resources]
+        [--msl-force-native-arrays]
+        [--hlsl]
+        [--reflect]
+        [--shader-model]
+        [--hlsl-enable-compat]
+        [--hlsl-support-nonzero-basevertex-baseinstance]
+        [--hlsl-auto-binding (push, cbv, srv, uav, sampler, all)]
+        [--hlsl-force-storage-buffer-as-uav]
+        [--separate-shader-objects]
+        [--pls-in format input-name]
+        [--pls-out format output-name]
+        [--remap source_name target_name components]
+        [--extension ext]
+        [--entry name]
+        [--stage <stage (vert, frag, geom, tesc, tese comp)>]
+        [--remove-unused-variables]
+        [--flatten-multidimensional-arrays]
+        [--no-420pack-extension]
+        [--remap-variable-type <variable_name> <new_variable_type>]
+        [--rename-interface-variable <in|out> <location> <new_variable_name>]
+        [--set-hlsl-vertex-input-semantic <location> <semantic>]
+        [--rename-entry-point <old> <new> <stage>]
+        [--combined-samplers-inherit-bindings]
+        [--no-support-nonzero-baseinstance]
+        [--emit-line-directives]
+
+
+
+rem .spv -> .glsl
+spirv-cross SPIR-V C:\Users\philm\source\repos\Veldrid.Xamarin.Forms\CommandListFactory\Shaders\Test_Colored2DVertices_vs.spv --output C:\Users\philm\source\repos\Veldrid.Xamarin.Forms\CommandListFactory\Shaders\Test_Colored2DVertices_vs.glsl
+spirv-cross SPIR-V C:\Users\philm\source\repos\Veldrid.Xamarin.Forms\CommandListFactory\Shaders\Test_Colored2DVertices_ps.spv --output C:\Users\philm\source\repos\Veldrid.Xamarin.Forms\CommandListFactory\Shaders\Test_Colored2DVertices_ps.glsl
+
+rem .spv -> .es.glsl
+spirv-cross --version 310 --es SPIR-V C:\Users\philm\source\repos\Veldrid.Xamarin.Forms\CommandListFactory\Shaders\Test_Colored2DVertices_vs.spv --output C:\Users\philm\source\repos\Veldrid.Xamarin.Forms\CommandListFactory\Shaders\Test_Colored2DVertices_vs_es.glsl
+spirv-cross --version 310 --es SPIR-V C:\Users\philm\source\repos\Veldrid.Xamarin.Forms\CommandListFactory\Shaders\Test_Colored2DVertices_ps.spv --output C:\Users\philm\source\repos\Veldrid.Xamarin.Forms\CommandListFactory\Shaders\Test_Colored2DVertices_ps_es.glsl
+
+rem .spv -> .msl
+spirv-cross --msl SPIR-V C:\Users\philm\source\repos\Veldrid.Xamarin.Forms\CommandListFactory\Shaders\Test_Colored2DVertices_vs.spv --output C:\Users\philm\source\repos\Veldrid.Xamarin.Forms\CommandListFactory\Shaders\Test_Colored2DVertices_vs.msl
+spirv-cross --msl SPIR-V C:\Users\philm\source\repos\Veldrid.Xamarin.Forms\CommandListFactory\Shaders\Test_Colored2DVertices_ps.spv --output C:\Users\philm\source\repos\Veldrid.Xamarin.Forms\CommandListFactory\Shaders\Test_Colored2DVertices_ps.msl
+
+
