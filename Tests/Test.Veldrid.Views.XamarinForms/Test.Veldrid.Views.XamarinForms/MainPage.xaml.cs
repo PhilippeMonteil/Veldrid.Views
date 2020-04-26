@@ -17,5 +17,11 @@ namespace Test.Veldrid.Views.XamarinForms
         {
             InitializeComponent();
         }
+
+        private void bnTest_Clicked(object sender, EventArgs e)
+        {
+            VeldridView0.Update();
+        }
+
     }
 }

@@ -3,14 +3,32 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vvcore="clr-namespace:Veldrid.Views.XamarinForms.Core;assembly=Veldrid.Views.XamarinForms.Core"
              mc:Ignorable="d"
              x:Class="Test.Veldrid.Views.XamarinForms.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Text="Welcome to Xamarin.Forms! 3.000" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+
+        <vvcore:VeldridView x:Name="VeldridView0" Grid.Row="1" BackgroundColor="Red" Margin="64" >
+            <!--<vvcore:VeldridViewPainter.CommandListFactory>
+                <clf:CommandListFactoryTest2D />
+            </vvcore:VeldridViewPainter.CommandListFactory>-->
+        </vvcore:VeldridView>
+
+        <Button x:Name="bnTest" Grid.Row="2" 
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center" 
+                Clicked="bnTest_Clicked" 
+                Text="Test!!!!!!!!!!!!!!!!!!"
+                Margin="8" />
+
+    </Grid>
 
 </ContentPage>
