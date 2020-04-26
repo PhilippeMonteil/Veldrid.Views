@@ -8,7 +8,6 @@ using Android.Graphics;
 using Android.Runtime;
 using Android.Views;
 
-using Veldrid;
 using Veldrid.Views.XamarinForms.Core;
 
 namespace Veldrid.Views.XamarinForms.Android

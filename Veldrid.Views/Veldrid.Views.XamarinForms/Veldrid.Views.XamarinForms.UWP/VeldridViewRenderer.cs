@@ -3,30 +3,26 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
-using Foundation;
-using UIKit;
-
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.iOS;
-
+using System.Threading.Tasks;
 using System.Diagnostics;
 
+using Xamarin.Forms;
+using Xamarin.Forms.Platform.UWP;
+
 using Veldrid.Views.XamarinForms.Core;
-using Veldrid.Views.XamarinForms.iOS;
+using Veldrid.Views.XamarinForms.UWP;
 
 [assembly: ExportRenderer(typeof(Veldrid.Views.XamarinForms.Core.VeldridView), typeof(VeldridViewRenderer))]
-namespace Veldrid.Views.XamarinForms.iOS
+namespace Veldrid.Views.XamarinForms.UWP
 {
 
     public class VeldridViewRenderer : ViewRenderer<VeldridView, UIVeldridView>, IVeldridViewRenderer
     {
-        VeldridView _veldridView0;
-        UIVeldridView _UIVeldridView0;
+        VeldridView _veldridView;
+        UIVeldridView _UIVeldridView;
 
         GraphicsDeviceOptions _options;
-
-        GraphicsDevice _graphicsDevice;
+        GraphicsDevice _graphicsDevice; // TBD: static
         Swapchain _swapChain;
 
         public VeldridViewRenderer()
@@ -37,7 +33,7 @@ namespace Veldrid.Views.XamarinForms.iOS
 
         void reset_Graphics()
         {
-            reset_swapchain(); // reset_Graphics
+            reset_swapchain();
             _graphicsDevice?.Dispose();
             _graphicsDevice = null;
         }
@@ -48,6 +44,9 @@ namespace Veldrid.Views.XamarinForms.iOS
             _swapChain = null;
         }
 
+        double width { set; get; } 
+        double height { set; get; }
+
         GraphicsDevice graphicsDevice
         {
             get
@@ -55,7 +54,7 @@ namespace Veldrid.Views.XamarinForms.iOS
                 if (_graphicsDevice == null)
                 {
                     _options = new GraphicsDeviceOptions(false, null, false, ResourceBindingModel.Improved);
-                    _graphicsDevice = Veldrid.MTL.GraphicsDeviceFactory.CreateMetal(_options);
+                    _graphicsDevice = Veldrid.D3D11.GraphicsDeviceFactory.CreateD3D11(_options);
                 }
                 return _graphicsDevice;
             }
@@ -65,11 +64,8 @@ namespace Veldrid.Views.XamarinForms.iOS
         {
             get
             {
-                // calage sur la taille du NativeControl
-                double _width = _UIVeldridView0.Bounds.Width;
-                double _height = _UIVeldridView0.Bounds.Height;
-
-                Debug.WriteLine($"{GetType().Name}.get {nameof(swapchain)}(-) 1.600 _width={_width} _height={_height} _swapChain={_swapChain}");
+                int _width = (int)width;
+                int _height = (int)height;
 
                 if (_width <= 0 || _height <= 0)
                 {
@@ -90,65 +86,32 @@ namespace Veldrid.Views.XamarinForms.iOS
 
                 if (_swapChain == null)
                 {
-                    GraphicsDevice _graphicsDevice = graphicsDevice;
-                    if (_graphicsDevice == null) return null;
 
-                    SwapchainSource ss = SwapchainSource.CreateUIView(Control.Handle);
+                    GraphicsDevice _graphicsDevice = graphicsDevice;
+                    if (_graphicsDevice == null)
+                    {
+                        return null;
+                    }
+
+                    float logicalDpi = 96; // TMP
+                    SwapchainSource ss = SwapchainSource.CreateUwp(_UIVeldridView, logicalDpi);
+
                     SwapchainDescription scd = new SwapchainDescription(
                         ss,
                         (uint)_width,
                         (uint)_height,
                         PixelFormat.R32_Float,
-                        true); // TBC
+                        false);
 
                     _swapChain = _graphicsDevice.ResourceFactory.CreateSwapchain(ref scd);
-                }
+                    if (_swapChain == null)
+                    {
+                        return null;
+                    }
 
-                {
-                    Framebuffer _framebuffer = _swapChain.Framebuffer;
-                    Debug.WriteLine($"{GetType().Name}.get {nameof(swapchain)}(+) ({_width}, {_height}) -> _framebuffer.width={_framebuffer.Width} .height={_framebuffer.Height}");
                 }
 
                 return _swapChain;
-            }
-        }
-
-        void test()
-        {
-            CommandList _commandList = null;
-            try
-            {
-                Debug.WriteLine($"{nameof(test)}(-) 1.001");
-
-                GraphicsDevice _graphicsDevice = graphicsDevice;
-                if (_graphicsDevice == null) return;
-
-                Swapchain _swapchain = swapchain;
-                if (_swapchain == null) return;
-
-                _commandList = _graphicsDevice.ResourceFactory.CreateCommandList();
-                if (_commandList == null) return;
-
-                _commandList.Begin();
-
-                _commandList.SetFramebuffer(_swapchain.Framebuffer);
-
-                _commandList.ClearColorTarget(0, RgbaFloat.Pink);
-
-                _commandList.End();
-
-                _graphicsDevice.SubmitCommands(_commandList);
-                _graphicsDevice.SwapBuffers(_swapchain);
-                _graphicsDevice.WaitForIdle();
-            }
-            catch (Exception E)
-            {
-                Debug.WriteLine($"{nameof(test)} EXCEPTION={E.Message} {E.StackTrace}");
-            }
-            finally
-            {
-                _commandList?.Dispose();
-                Debug.WriteLine($"{nameof(test)}(+)");
             }
         }
 
@@ -162,21 +125,20 @@ namespace Veldrid.Views.XamarinForms.iOS
 
         public void OnResize(double width, double height)
         {
+
             try
             {
-                Debug.WriteLine($"{GetType().Name}.{nameof(OnResize)}(-) 1.300 width={width} height={height} _swapChain={_swapChain}");
-
-                // pas de resize systématique
-                // reset_swapchain(); // OnResize
-
-                _veldridView0?.Update(); // important
+                this.width = width;
+                this.height = height;
+                // reset_swapchain();
             }
             catch (Exception E)
             {
+                Debug.WriteLine($"{nameof(OnResize)} width={width} height={height} EXCEPTION={E.Message}");
             }
             finally
             {
-                Debug.WriteLine($"{nameof(OnResize)}(+) width={width} height={height}");
+                _veldridView?.Update(); // IMPORTANT
             }
         }
 
@@ -188,19 +150,19 @@ namespace Veldrid.Views.XamarinForms.iOS
         {
             try
             {
-                Debug.WriteLine($"{nameof(OnElementChanged)}(-) 1.300");
+                Debug.WriteLine($"{nameof(OnElementChanged)}(-) 1.001");
 
                 base.OnElementChanged(e);
 
-                if (_veldridView0 != null)
+                if (_veldridView != null)
                 {
-                    _veldridView0.SetRenderer(null);
-                    _veldridView0 = null;
+                    _veldridView.SetRenderer(null);
+                    _veldridView = null;
                 }
 
                 if (e.OldElement != null)
                 {
-                    reset_Graphics(); // OnElementChanged
+                    reset_Graphics();
                 }
 
                 if (e.NewElement != null)
@@ -209,14 +171,14 @@ namespace Veldrid.Views.XamarinForms.iOS
                     {
                         if (Control == null)
                         {
-                            _UIVeldridView0 = new UIVeldridView();
-                            SetNativeControl(_UIVeldridView0);
-                            Debug.WriteLine($"{nameof(OnElementChanged)}(-) _UIVeldridView0.Frame={_UIVeldridView0.Frame}");
+                            _UIVeldridView = new UIVeldridView();
+                            SetNativeControl(_UIVeldridView);
+                            Debug.WriteLine($"{nameof(OnElementChanged)}(-) _UIVeldridView0={_UIVeldridView}");
                         }
                     }
 
-                    _veldridView0 = e.NewElement;
-                    _veldridView0.SetRenderer(this);
+                    _veldridView = e.NewElement;
+                    _veldridView.SetRenderer(this);
                 }
             }
             catch (Exception E)

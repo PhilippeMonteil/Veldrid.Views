@@ -121,6 +121,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UIVeldridView.cs" />
+    <Compile Include="VeldridViewRenderer.cs" />
     <EmbeddedResource Include="Properties\Veldrid.Views.XamarinForms.UWP.rd.xml" />
   </ItemGroup>
   <ItemGroup>
