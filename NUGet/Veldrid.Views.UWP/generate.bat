@@ -1,12 +1,12 @@
 
-copy ..\..\Veldrid.Views.Contracts\bin\Release\netstandard2.0\Veldrid.Views.Contracts.dll .\lib\netstandard2.0
-copy ..\..\Veldrid.Views.Contracts\bin\Release\netstandard2.0\Veldrid.Views.Contracts.pdb .\lib\netstandard2.0
+copy ..\..\Veldrid.Views\Veldrid.Views.UWP\bin\Release\Veldrid.Views.UWP.dll ..\..\NUGet\Veldrid.Views.UWP\lib\netstandard2.0
+copy ..\..\Veldrid.Views\Veldrid.Views.UWP\bin\Release\Veldrid.Views.UWP.pdb ..\..\NUGet\Veldrid.Views.UWP\lib\netstandard2.0
 pause
 
-del Veldrid.Views.Contracts.1.0.*.nupkg
+del Veldrid.Views.UWP.1.0.*.nupkg
 
-nuget pack Veldrid.Views.Contracts.nuspec
+nuget pack Veldrid.Views.UWP.nuspec
 
-copy Veldrid.Views.Contracts.1.0.*.nupkg ..
+copy Veldrid.Views.UWP.1.0.*.nupkg ..
 
 pause
