@@ -1,9 +1,6 @@
-# Veldrid.Views
+# Veldrid.Views: leveraging the power of the Veldrid portable GPU API with Xamarin.Forms, WPF, UWP
 
-
-        Veldrid.Views: leveraging the power of the Veldrid portable GPU API with Xamarin.Forms, WPF, UWP
-
-1) Presenting Veldrid and Veldrid.Views
+## 1) Presenting Veldrid and Veldrid.Views  
 
 Veldrid is a low-level graphics library for .NET. It can be used to create high-performance 2D and 3D games, simulations, tools, and other graphical applications. Unlike most other .NET graphics libraries, Veldrid is designed to be portable, meaning it is not tied to any particular operating system or native graphics API. With Direct3D, Vulkan, Metal, OpenGL, and OpenGL ES backends, applications built with Veldrid can run on all desktop and mobile platforms without modification.
 The Veldrid web site: https://veldrid.dev/
@@ -11,7 +8,7 @@ The Veldrid web site: https://veldrid.dev/
 Veldrid.Views proposes a simple mechanism for connecting Veldrid to the various UI engines available to .Net developers: WPF, UWP, Xamarin.Forms
 in a consistent and portable manner. 
 
-2) Key Concepts
+## 2) Key Concepts
 
 Veldrid.Views proposes a CommandList Factory mechanism in charge of producing the Veldrid CommandLists executed by one of its Views to render their content.
 
@@ -23,6 +20,7 @@ Veldrid.Views includes a Xamarin.Forms custom control, provided with its rendere
 
 A CommandFactory component exposes the ICommandListFactory defined in the Veldrid.Views.Contracts component:
 
+```
 using Veldrid;
 
 namespace Veldrid.Views.Contracts
@@ -34,6 +32,7 @@ namespace Veldrid.Views.Contracts
     }
 
 }
+```
 
 A CommandFactory component can then be connected with no code to a Veldrid.View View, the Xamarin.Forms one in this case, through the VeldridViewPainter.CommandListFactory attached property:
 
@@ -50,7 +49,7 @@ A CommandFactory component can then be connected with no code to a Veldrid.View 
 
 Veldrid.View exposes a different VeldridViewPainter.CommandListFactory Attached Property for each of the supported plaforms: Xamarin.Forms, WPF, UWP.
 
-3) The Veldrid.Views nugets
+## 3) The Veldrid.Views nugets
 
 The following Nuget are temporarily included in the project:
 
@@ -69,7 +68,7 @@ They can be found in the NUGet directory which should be referenced as a local s
 Veldrid.Views temporarily uses the Veldrid.Platforms.1.0.9.nupkg home made package instead of the 'official' Veldrid one
 which requires a few changes to be integrated and be usable by Veldrid.Views.
 
-4) Organisation of the project source code
+## 4) Organisation of the project source code
 
 - Veldrid.Views.Contracts: definition of the ICommandListFactory interface
 
@@ -91,7 +90,7 @@ which requires a few changes to be integrated and be usable by Veldrid.Views.
   Includes the .nuspec definitions of the Nuget packages produced and used by the Veldrid.Views projects along with tha batch files to produce them.
   Note: those packages are not published yet, they should be stored in a local directory made available to Nuget as a local package source.   
 
-5) The Veldrid.Views.CommandListFactory sample component: 
+## 5) The Veldrid.Views.CommandListFactory sample component: 
 
 The CommandListFactoryTest2D CommandListFactory illustrates the generation and use of the HLSL / GLSL / SPIR-V and Metal versions of the shaders
 needed by a CommandListFactory component using the DXC and SPIRV-Cross compilers.
@@ -101,6 +100,7 @@ using SPIR-Cross.
 
 The Shaders.BAT batch file provides the commands needed by the CommandListFactoryTest2D component:
 
+```
 rem .vs/.ps -> .spv
 dxc -T vs_6_0 -spirv -E _VertexShader -Fo .\CommandListFactory\Shaders\Test_Colored2DVertices_vs.spv .\CommandListFactory\Shaders\Test_Colored2DVertices.vs
 dxc -T ps_6_0 -spirv -E _PixelShader -Fo .\CommandListFactory\Shaders\Test_Colored2DVertices_ps.spv .\CommandListFactory\Shaders\Test_Colored2DVertices.ps
@@ -116,8 +116,9 @@ spirv-cross --version 310 --es SPIR-V .\CommandListFactory\Shaders\Test_Colored2
 rem .spv -> .msl
 spirv-cross --msl SPIR-V .\CommandListFactory\Shaders\Test_Colored2DVertices_vs.spv --output .\CommandListFactory\Shaders\Test_Colored2DVertices_vs.msl
 spirv-cross --msl SPIR-V .\CommandListFactory\Shaders\Test_Colored2DVertices_ps.spv --output .\CommandListFactory\Shaders\Test_Colored2DVertices_ps.msl
+```
 
-7) Additional resources
+## 6) Additional resources
 
 - The WPF D3D11Image is provided separately in 32 and 64 bit versions found in nuget.org (include prerelease packages)
   microsoft.wpf.interop.directx-x64.0.9.0-beta-22856, microsoft.wpf.interop.directx-x32.0.9.0-beta-22856.
