@@ -63,10 +63,13 @@ The following Nuget are temporarily included in the project:
 - Veldrid.Views.WPF.1.0.2.nupkg
 - Veldrid.Views.UWP.1.0.2.nupkg
 
-They can be found in the NUGet directory which should be referenced as a local source by NUGet.
-
 Veldrid.Views temporarily uses the Veldrid.Platforms.1.0.9.nupkg home made package instead of the 'official' Veldrid one
 which requires a few changes to be integrated and be usable by Veldrid.Views.
+
+<b>
+IMPORTANT:
+Those Nuget packages can be temporarily found in the NUGet directory which should be referenced as a local source by NUGet.
+</b>
 
 ## 4) Organisation of the project source code
 
