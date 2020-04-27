@@ -17,22 +17,22 @@
       <group targetFramework=".NETStandard2.0">
         <dependency id="Xamarin.Forms" version="4.4.0" exclude="Build,Analyzers" />
         <dependency id="Veldrid.Platforms" version="1.0.9" exclude="Build,Analyzers"/>
-        <dependency id="Veldrid.Views.Contracts" version="1.0.0" exclude="Build,Analyzers"/>
+        <dependency id="Veldrid.Views.Contracts" version="1.0.2" exclude="Build,Analyzers"/>
       </group>      
       <group targetFramework="MonoAndroid">
         <dependency id="Xamarin.Forms" version="4.4.0" exclude="Build,Analyzealyzers" />
         <dependency id="Veldrid.Platforms" version="1.0.9" exclude="Build,Analyzers"/>
-        <dependency id="Veldrid.Views.Contracts" version="1.0.0" exclude="Build,Analyzers"/>
+        <dependency id="Veldrid.Views.Contracts" version="1.0.2" exclude="Build,Analyzers"/>
       </group>
       <group targetFramework="Xamarin.iOS">
         <dependency id="Xamarin.Forms" version="4.4.0" exclude="Build,Analyzers" />
         <dependency id="Veldrid.Platforms" version="1.0.9" exclude="Build,Analyzers"/>
-        <dependency id="Veldrid.Views.Contracts" version="1.0.0" exclude="Build,Analyzers"/>
+        <dependency id="Veldrid.Views.Contracts" version="1.0.2" exclude="Build,Analyzers"/>
       </group>
       <group targetFramework="UAP10.0">
         <dependency id="Xamarin.Forms" version="4.4.0" exclude="Build,Analyzers" />
         <dependency id="Veldrid.Platforms" version="1.0.9" exclude="Build,Analyzers"/>
-        <dependency id="Veldrid.Views.Contracts" version="1.0.0" exclude="Build,Analyzers"/>
+        <dependency id="Veldrid.Views.Contracts" version="1.0.2" exclude="Build,Analyzers"/>
       </group>
     </dependencies>
   </metadata>

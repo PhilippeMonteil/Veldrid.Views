@@ -16,7 +16,7 @@
     <dependencies>
       <group targetFramework=".NETStandard2.0">
         <dependency id="Veldrid.Platforms" version="1.0.9" exclude="Build,Analyzers"/>
-        <dependency id="Veldrid.Views.Contracts" version="1.0.0" exclude="Build,Analyzers"/>
+        <dependency id="Veldrid.Views.Contracts" version="1.0.2" exclude="Build,Analyzers"/>
       </group>
     </dependencies>
   </metadata>

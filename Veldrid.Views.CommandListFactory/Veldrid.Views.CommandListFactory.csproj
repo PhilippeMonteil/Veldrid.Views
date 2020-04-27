@@ -40,7 +40,7 @@
 
   <ItemGroup>
     <PackageReference Include="Veldrid.Platforms" Version="1.0.9" />
-    <PackageReference Include="Veldrid.Views.Contracts" Version="1.0.1" />
+    <PackageReference Include="Veldrid.Views.Contracts" Version="1.0.2" />
   </ItemGroup>
 
 </Project>
