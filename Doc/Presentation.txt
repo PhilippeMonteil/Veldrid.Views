@@ -1,7 +1,7 @@
 
         Veldrid.Views: leveraging the power of the Veldrid portable GPU API with Xamarin.Forms, WPF, UWP
 
-1) Presenting Veldrid.Views
+1) Presenting Veldrid and Veldrid.Views
 
 Veldrid is a low-level graphics library for .NET. It can be used to create high-performance 2D and 3D games, simulations, tools, and other graphical applications. Unlike most other .NET graphics libraries, Veldrid is designed to be portable, meaning it is not tied to any particular operating system or native graphics API. With Direct3D, Vulkan, Metal, OpenGL, and OpenGL ES backends, applications built with Veldrid can run on all desktop and mobile platforms without modification.
 The Veldrid web site: https://veldrid.dev/
@@ -11,9 +11,9 @@ in a consistent and portable manner.
 
 2) Key Concepts
 
-Veldrid.Views proposes a CommandList Factory mechanism in charge of producing the Veldrid CommandLists executed by the View to render their content.
+Veldrid.Views proposes a CommandList Factory mechanism in charge of producing the Veldrid CommandLists executed by one of its Views to render their content.
 
-A CommandList Factory is exposed by a .Net Standard, Veldrid based component and can be shared by all the supported platforms: Xamarin.Forms, WPF, UWP.
+A CommandList Factory is exposed by a .Net Standard Veldrid based component and can be used by all the supported platforms: Xamarin.Forms, WPF, UWP.
 
 Veldrid.Views provides an attached property mechanism for connecting its Views with the CommandList Factories producing the CommandLists defining their aspect.
 
@@ -33,7 +33,7 @@ namespace Veldrid.Views.Contracts
 
 }
 
-A CommandFactory component can then be connected with no code to a Veldrid.VIew View, the Xamarin.Forms one in this case, through the VeldridViewPainter.CommandListFactory attached property:
+A CommandFactory component can then be connected with no code to a Veldrid.View View, the Xamarin.Forms one in this case, through the VeldridViewPainter.CommandListFactory attached property:
 
     XAML extract:
 
@@ -46,17 +46,26 @@ A CommandFactory component can then be connected with no code to a Veldrid.VIew 
             </vvxfcore:VeldridViewPainter.CommandListFactory>
         </vvxfcore:VeldridView>
 
-Veldrid.View exposes a different VeldridViewPainter.CommandListFactory Attached Property for each of the supported plaforms:
-Xamarin.Form, WPF, UWP.
+Veldrid.View exposes a different VeldridViewPainter.CommandListFactory Attached Property for each of the supported plaforms: Xamarin.Forms, WPF, UWP.
 
 3) The Veldrid.Views nugets
 
-The following Nuget 
+The following Nuget are temporarily included in the project:
 
-6) About the Veldrid Nuget package used by Veldrid.Views
+- Veldrid.Platforms.1.0.9.nupkg: providing the Veldrid runtime
+
+- Veldrid.Views.Contracts.1.0.2.nupkg: defining the ICommandListFactory interface
+
+- Veldrid.Views.CommandListFactory.1.0.3.nupkg: providing the CommandListFactory components used by the test applications
+
+- Veldrid.Views.XamarinForms.1.0.2.nupkg
+- Veldrid.Views.WPF.1.0.2.nupkg
+- Veldrid.Views.UWP.1.0.2.nupkg
+
+They can be found in the NUGet directory which should be referenced as a local source by NUGet.
 
 Veldrid.Views temporarily uses the Veldrid.Platforms.1.0.9.nupkg home made package instead of the 'official' Veldrid one
-which requires a few changes to be integrated ti be usable by Veldrid.Views.
+which requires a few changes to be integrated and be usable by Veldrid.Views.
 
 4) Organisation of the project source code
 
