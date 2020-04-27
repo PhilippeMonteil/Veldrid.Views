@@ -30,11 +30,6 @@ namespace Test.Veldrid.Views.WPF
             this.Grid0.SizeChanged += Grid0_SizeChanged;
         }
 
-        private void Grid0_SizeChanged(object sender, SizeChangedEventArgs e)
-        {
-            this.Dispatcher.Invoke(() => updateSize());
-        }
-
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
             // IMPORTANT
@@ -42,20 +37,22 @@ namespace Test.Veldrid.Views.WPF
             d3D11Image.RequestRender();
         }
 
-        void updateSize()
+        private void Grid0_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-            double _w = Grid0.ColumnDefinitions[0].ActualWidth;
-            double _h = Grid0.RowDefinitions[0].ActualHeight;
-            Debug.WriteLine($" {nameof(updateSize)} _w={_w} _h={_h}");
-            d3D11Image.SetPixelSize((int)_w, (int)_h); // RequestRender est inutile
+            this.Dispatcher.Invoke(() => updateSize());
         }
 
-        int click;
+        void updateSize()
+        {
+            // adapting the d3D11Image size to the host grid cell one
+            double _w = Grid0.ColumnDefinitions[0].ActualWidth;
+            double _h = Grid0.RowDefinitions[0].ActualHeight;
+            d3D11Image.SetPixelSize((int)_w, (int)_h); // RequestRender is useless
+        }
 
         private void BnTest_Click(object sender, RoutedEventArgs e)
         {
-            int _click = click++;
-            Debug.WriteLine($" Image0.ActualWidth={Image0.ActualWidth} {Image0.ActualHeight}");
+            // explicitly triggering a repaint of the d3D11Image control 
             d3D11Image.RequestRender();
         }
     }

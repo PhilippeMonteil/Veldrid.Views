@@ -13,6 +13,8 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
+using Veldrid.Views.UWP;
+
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
 namespace Test.Veldrid.Views.UWP
@@ -29,6 +31,8 @@ namespace Test.Veldrid.Views.UWP
 
         private void BnTest_Click(object sender, RoutedEventArgs e)
         {
+            // explicitly triggering a repaint of swapChainPanel
+            SwapChainPanelPainter.Render(swapChainPanel);
         }
 
     }

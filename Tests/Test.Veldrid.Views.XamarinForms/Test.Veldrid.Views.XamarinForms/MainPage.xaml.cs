@@ -20,6 +20,7 @@ namespace Test.Veldrid.Views.XamarinForms
 
         private void bnTest_Clicked(object sender, EventArgs e)
         {
+            // explicitly triggering a repaint of VeldridView0
             VeldridView0.Update();
         }
 
